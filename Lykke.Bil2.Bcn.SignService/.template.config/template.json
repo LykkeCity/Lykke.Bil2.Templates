@@ -1,0 +1,12 @@
+{
+    "author": "Lykke",
+    "classifications": ["Lykke", "Bil2", "Sign Service"],
+    "name": "Lykke Bil2 Sign Service",
+    "identity": "Lykke.Bil2.SignService",
+    "shortName": "lkebil2sign",
+    "tags": {
+        "language": "C#"
+    },
+    "sourceName": "Bcn",
+    "preferNameDirectory": "false"
+}
