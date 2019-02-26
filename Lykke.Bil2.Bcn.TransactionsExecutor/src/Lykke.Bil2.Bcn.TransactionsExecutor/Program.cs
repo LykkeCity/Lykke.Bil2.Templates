@@ -9,11 +9,11 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor
     {
         static async Task Main(string[] args)
         {
-#if DEBUG
+//#$if DEBUG
             await LykkeStarter.Start<Startup>(true);
-#else
+//#$else
             await LykkeStarter.Start<Startup>(false);
-#endif
+//#$endif
         }
     }
 }

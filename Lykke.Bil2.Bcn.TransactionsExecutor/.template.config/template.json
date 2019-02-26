@@ -8,5 +8,28 @@
         "language": "C#"
     },
     "sourceName": "Bcn",
-    "preferNameDirectory": "false"
+    "preferNameDirectory": "false",
+    "symbols": {
+        "ifdef": {
+            "type": "generated",
+            "generator": "constant",
+            "parameters": {
+                "value": "#"
+            },
+            "replaces": "//#$"
+        }
+    },
+    "SpecialCustomOperations": {
+        "*.yaml": {
+            "Operations": [
+                {
+                    "type": "conditional",
+                    "configuration": {
+                        "style": "line",
+                        "token": "#"
+                    }
+                }
+            ]
+        }
+    }
 }
