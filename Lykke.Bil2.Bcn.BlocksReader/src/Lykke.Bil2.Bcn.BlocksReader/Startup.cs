@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System;
 using JetBrains.Annotations;
 using Lykke.Bil2.Bcn.BlocksReader.Services;
@@ -5,6 +6,7 @@ using Lykke.Bil2.Bcn.BlocksReader.Settings;
 using Lykke.Bil2.Sdk.BlocksReader;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Lykke.Bil2.Sdk.BlocksReader.Services;
 
 namespace Lykke.Bil2.Bcn.BlocksReader
 {
@@ -28,25 +30,28 @@ namespace Lykke.Bil2.Bcn.BlocksReader
                         /* TODO: Provide specific settings and dependencies, if necessary */
                     );
 
+#if pullIrreversibilityStrategy
+                // Register irreversible block retrieving strategy
 
+                options.AddIrreversibleBlockPulling(ctx =>
+                    new IrreversibleBlockProvider
+                    (
+                        /* TODO: Provide specific settings and dependencies, if necessary */
+                    ));
+#endif
 
-                // If blockchain does not support blocks irreversibility then delete this block of comments.
-                //
-                // If blockchain does not support blocks irreversibility, or "push" strategy is used, then delete ./Services/IrreversibleBlockProvider.cs.
-                //
-                // If blockchain supports blocks irreversibility then choose either "push" or "pull"
-                // strategy for retrieving last irreversible block and uncomment corresponding line below:
-                //
-                // options.AddIrreversibleBlockPushing();
-                //
-                // options.AddIrreversibleBlockPulling(ctx =>
-                //     new IrreversibleBlockProvider
-                //     (
-                //         /* TODO: Provide specific settings and dependencies, if necessary */
-                //     ));
+#if pushIrreversibilityStrategy
+                // Register irreversible block retrieving strategy
 
+                options.AddIrreversibleBlockPushing();
 
+                // Register additional services
 
+                options.UseSettings = settings =>
+                {
+                    services.AddSingleton(sp => new IrreversibleBlockHandler(sp.GetRequiredService<IIrreversibleBlockListener>()));
+                };
+#else
                 // To access settings for any purpose,
                 // usually, to register additional services like blockchain client,
                 // uncomment code below:
@@ -55,6 +60,7 @@ namespace Lykke.Bil2.Bcn.BlocksReader
                 // {
                 //     services.AddSingleton<IService>(new ServiceImpl(settings.CurrentValue.ServiceSettingValue));
                 // };
+#endif
             });
         }
 

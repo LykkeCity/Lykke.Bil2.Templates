@@ -29,7 +29,7 @@
 
 3. Generate solutions:
 
-    Run
+    Generally, run
 
     ```bash
     dotnet new ${templateName} -n ${integrationName} -o ${outputPath}
@@ -45,16 +45,31 @@
 
     to generate solution from the inside.
 
-    ### Example
+## Examples
 
-    To create __sign service__ solution for __Bitcoin__ blockchain integration run
+### Sign service
 
-    ```bash
-    dotnet new lkebcnsign -n Bitcoin -o ./Lykke.Bil2.Bitcoin.SignService
-    ```
+```bash
+dotnet new lkebil2sign -n Bitcoin -o Lykke.Bil2.Bitcoin.SignService
+```
 
-    or create new directory, rename it to `Lykke.Bil2.Bitcoin.SignService` and run from the inside:
+### Transactions executor
 
-    ```bash
-    dotnet new lkebcnsign -n Bitcoin 
-    ```
+```
+dotnet new lkebil2tx -n Bitcoin -o Lykke.Bil2.Bitcoin.TransactionsExecutor
+```
+
+### Blocks reader
+
+Blocks reader template contains additional parameter `-is` (or `--irreversibilityStrategy`) for irreversible block obtaining strategy, one of `none|pull|push`, if not specified - `none` is used:
+
+```bash
+dotnet new lkebil2blocks -n Bitcoin -o Lykke.Bil2.Bitcoin.BlocksReader -is none|pull|push
+```
+
+Use `none` or skip `-is` parameter if blockchain does not support irreversible blocks.
+
+Use `push` model if used blockchain tools allow to determine changes of last irreversible block number (f.e. via web-sockets). `IrreversibleBlockHandler` class and corresponding registrations are generated in this case. Use `IIrreversibleBlockListener` provided by DI to emit `LastIrreversibleBlockUpdatedEvent`.
+
+Use `pull` model if dedicated request is required to retrieve irreversible block data. `IrreversibleBlockProvider` class and corresponding registrations are generated in this case.
+
