@@ -19,17 +19,25 @@
 
     where `${path}` is the __full__ path to the template directory (where folder .template.config placed) __without trailing slash__.
 
+    ### Example
+
+    To install __blocks reader__ template run
+
+    ```bash
+    dotnet new -i ./Lykke.Bil2.Templates/Lykke.Bil2.BlocksReader
+    ```
+
 3. Generate solutions:
 
-    Use
+    Run
 
     ```bash
     dotnet new ${templateName} -n ${integrationName} -o ${outputPath}
     ```
 
-    to generate solution is specified directory.
+    to generate solution in specified directory.
 
-    Or create directory with required name, `cd` into created directory and use
+    Or create directory with required name, `cd` into created directory and run
 
     ```bash
     dotnet new ${templateName} -n ${integrationName}
@@ -37,7 +45,9 @@
 
     to generate solution from the inside.
 
-    I.e. to create sign service solution for Bitcoin blockchain integration use:
+    ### Example
+
+    To create __sign service__ solution for __Bitcoin__ blockchain integration run
 
     ```bash
     dotnet new lkebcnsign -n Bitcoin -o ./Lykke.Bil2.Bitcoin.SignService
