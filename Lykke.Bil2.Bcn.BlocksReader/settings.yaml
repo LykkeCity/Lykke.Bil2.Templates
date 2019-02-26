@@ -1,0 +1,50 @@
+# Common settings
+
+MonitoringServiceClient:
+    MonitoringServiceUrl:
+        settings-key: MonitoringServiceUrl
+
+SlackNotifications:
+    AzureQueue:
+        ConnectionString:
+            settings-key: SlackNotificationsConnString
+            types:
+                - AzureTableStorage
+        QueueName:
+            settings-key: SlackQueueName
+
+# Blocks reader settings
+
+Db:
+    AzureDataConnString:
+        settings-key: Bcn-AzureDataConnString
+        types:
+            - AzureTableStorage
+    LogsConnString:
+        settings-key: Bcn-LogsConnString
+        types:
+            - AzureTableStorage
+
+RabbitConnString:
+    settings-key: Bcn-BlocksReader-RabbitConnString
+    types:
+        - RabbitMq
+
+MessageListeningParallelism:
+    settings-key: Bcn-BlocksReader-MessageListeningParallelism
+
+LastIrreversibleBlockMonitoringPeriod:
+    settings-key: Bcn-BlocksReader-LastIrreversibleBlockMonitoringPeriod
+    types:
+        - Optional
+
+# Define specific blockchain settings below, if necessary.
+#
+# For example:
+#
+# NodeUrl:
+#   settings-key: Bcn-NodeUrl
+# NodeUsername:
+#   settings-key: Bcn-Nodeassword
+# NodePassword:
+#   settings-key: Bcn-NodePassword

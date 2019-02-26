@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Bil2.Bcn.SignService", "src\Lykke.Bil2.Bcn.SignService\Lykke.Bil2.Bcn.SignService.csproj", "{C434085E-537C-4EEF-8DD8-E23C6AAF0575}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Tests", "1. Tests", "{D536FE63-EA4C-4C8C-A941-6FCFC2A5791B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Bil2.Bcn.SignService.Tests", "tests\Lykke.Bil2.Bcn.SignService.Tests\Lykke.Bil2.Bcn.SignService.Tests.csproj", "{DA614660-F406-418F-AE02-567DE619DD9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Bil2.Bcn.SignService", "src\Lykke.Bil2.Bcn.SignService\Lykke.Bil2.Bcn.SignService.csproj", "{C434085E-537C-4EEF-8DD8-E23C6AAF0575}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{75A75DAA-341A-4A90-9B2E-935C56FDE75C}"
 	ProjectSection(SolutionItems) = preProject

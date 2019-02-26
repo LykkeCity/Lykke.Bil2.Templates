@@ -6,7 +6,7 @@
 
 - `lkebil2sign`
 - `lkebil2tx`
-- `lkebil2blockreader`
+- `lkebil2blocks`
 
 ## How to use
 
