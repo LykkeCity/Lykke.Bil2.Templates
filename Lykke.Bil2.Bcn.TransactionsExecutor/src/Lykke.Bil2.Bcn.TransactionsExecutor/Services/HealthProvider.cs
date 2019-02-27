@@ -5,7 +5,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
 {
     public class HealthProvider : IHealthProvider
     {
-        public HealthProvider(/* TODO: Provide specific settings and dependecies, if necessary */)
+        public HealthProvider(/* TODO: Provide specific settings and dependencies, if necessary */)
         {
         }
 
