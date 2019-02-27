@@ -31,7 +31,7 @@ namespace Lykke.Bil2.Bcn.SignService
                 options.AddressGeneratorFactory = ctx =>
                     new AddressGenerator
                     (
-                        /* TODO: Provide specific settings and dependecies, if necessary */
+                        /* TODO: Provide specific settings and dependencies, if necessary */
                     );
 
                 // To access settigns for any purpose, (f.e. to register additional services,
