@@ -53,7 +53,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor
                     );
 
 
-                // To access settigns for any purpose,
+                // To access settings for any purpose,
                 // usually, to register additional services like blockchain client,
                 // uncomment code below:
                 //
