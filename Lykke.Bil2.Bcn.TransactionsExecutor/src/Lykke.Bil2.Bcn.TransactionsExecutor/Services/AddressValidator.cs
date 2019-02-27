@@ -11,7 +11,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
 {
     public class AddressValidator : IAddressValidator
     {
-        public AddressValidator(/* TODO: Provide specific settings and dependecies, if necessary */)
+        public AddressValidator(/* TODO: Provide specific settings and dependencies, if necessary */)
         {
         }
 
