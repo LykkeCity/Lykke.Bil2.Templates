@@ -49,7 +49,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor
                 options.TransactionExecutorFactory = ctx =>
                     new TransactionExecutor
                     (
-                        /* TODO: Provide specific settings and dependecies, if necessary */
+                        /* TODO: Provide specific settings and dependencies, if necessary */
                     );
 
 
