@@ -33,7 +33,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
             //
             // var isAddressFormatValid = ...;
             //
-            // return !isAddressForatValid
+            // return !isAddressFormatValid
             //     ? new AddressValidityResponse(AddressValidationResult.InvalidAddressFormat)
             //     : new AddressValidityResponse(AddressValidationResult.Valid);
 
