@@ -18,8 +18,8 @@ namespace Lykke.Bil2.Bcn.SignService.Services
 
         public async Task<AddressCreationResult> CreateAddressAsync()
         {
-            // Create dedicated deposit wallet,
-            // or return shared deposit wallet address.
+            // Create dedicated deposit wallet, or return shared deposit wallet address.
+            // Throw OperationNotSupportedException if offline address creation is not supported by the blockchain.
             //
             // For example when shared deposit wallet scheme is used:
             //

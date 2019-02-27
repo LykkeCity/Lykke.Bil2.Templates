@@ -17,7 +17,7 @@
     $ dotnet new -i ${path}
     ```
 
-    where `${path}` is the __full__ path to the template directory (where folder .template.config placed) __without trailing slash__.
+    where `${path}` is the path to the template directory (where folder .template.config placed). On Windows it must be the __full__ path __without trailing slash__.
 
     ### Example
 
@@ -53,11 +53,14 @@
 dotnet new lkebil2sign -n Bitcoin -o Lykke.Bil2.Bitcoin.SignService
 ```
 
+For sign service implementation details see [Lykke.Bil2.Bcn.SignService/IMPLEMENTATION.md](Lykke.Bil2.Bcn.SignService/IMPLEMENTATION.md).
+
 ### Transactions executor
 
-```
+```bash
 dotnet new lkebil2tx -n Bitcoin -o Lykke.Bil2.Bitcoin.TransactionsExecutor
 ```
+For transactions executor implementation details see [Lykke.Bil2.Bcn.TransactionsExecutor/IMPLEMENTATION.md](Lykke.Bil2.Bcn.TransactionsExecutor/IMPLEMENTATION.md).
 
 ### Blocks reader
 
@@ -73,3 +76,4 @@ Use `push` model if used blockchain tools allow to determine changes of last irr
 
 Use `pull` model if dedicated request is required to retrieve irreversible block data. `IrreversibleBlockProvider` class and corresponding registrations are generated in this case.
 
+For transactions executor implementation details see [Lykke.Bil2.Bcn.BlocksReader/IMPLEMENTATION.md](Lykke.Bil2.Bcn.BlocksReader/IMPLEMENTATION.md).

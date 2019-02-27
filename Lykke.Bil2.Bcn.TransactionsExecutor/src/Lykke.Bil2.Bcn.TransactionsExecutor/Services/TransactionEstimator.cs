@@ -16,7 +16,18 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
 
         public async Task<EstimateSendingTransactionResponse> EstimateSendingAsync(EstimateSendingTransactionRequest request)
         {
-            // TODO: estimate transaction fees
+            // TODO: estimate transaction fees.
+            //
+            // Throw:
+            // - Lykke.Bil2.Contract.Common.RequestValidationException:
+            //     if a transaction can’t be estimated with the given parameters
+            //     and it will be never possible to estimate the transaction with exactly the same
+            //     parameters.
+            //
+            // - System.Exception:
+            //     if there are any other errors.
+            //     Likely a temporary issue with infrastructure or configuration,
+            //     request should be repeated later.
             //
             // Result usually consists of single fee element,
             // but for some blockchains fees may be charged in multiple currencies/tokens.

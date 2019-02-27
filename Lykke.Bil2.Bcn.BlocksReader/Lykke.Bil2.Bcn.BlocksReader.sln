@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Bil2.Bcn.BlocksReader
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{990BD414-3CED-42B7-AEB2-E8AFF532DD1D}"
 	ProjectSection(SolutionItems) = preProject
+		IMPLEMENTATION.md = IMPLEMENTATION.md
 		README.md = README.md
 		settings.yaml = settings.yaml
 	EndProjectSection

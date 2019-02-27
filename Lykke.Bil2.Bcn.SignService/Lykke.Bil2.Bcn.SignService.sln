@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Bil2.Bcn.SignService"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{75A75DAA-341A-4A90-9B2E-935C56FDE75C}"
 	ProjectSection(SolutionItems) = preProject
+		IMPLEMENTATION.md = IMPLEMENTATION.md
 		README.md = README.md
 		settings.yaml = settings.yaml
 	EndProjectSection
