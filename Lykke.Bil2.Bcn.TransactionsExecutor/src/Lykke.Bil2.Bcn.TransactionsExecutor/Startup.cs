@@ -25,7 +25,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor
                 options.AddressValidatorFactory = ctx =>
                     new AddressValidator
                     (
-                        /* TODO: Provide specific settings and dependecies, if necessary */
+                        /* TODO: Provide specific settings and dependencies, if necessary */
                     );
 
                 options.HealthProviderFactory = ctx =>
