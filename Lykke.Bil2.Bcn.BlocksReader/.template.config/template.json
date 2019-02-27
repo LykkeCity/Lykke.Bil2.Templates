@@ -1,0 +1,84 @@
+{
+    "author": "Lykke",
+    "classifications": [
+        "Lykke",
+        "Bil2",
+        "Blocks Reader"
+    ],
+    "name": "Lykke Bil2 Blocks Reader",
+    "identity": "Lykke.Bil2.BlocksReader",
+    "shortName": "lkebil2blocks",
+    "tags": {
+        "language": "C#"
+    },
+    "sourceName": "Bcn",
+    "preferNameDirectory": "false",
+    "symbols": {
+        "irreversibilityStrategy": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "none",
+            "choices": [
+                {
+                    "choice": "none",
+                    "description": "Will not contain code for retreiving irreversible block data"
+                },
+                {
+                    "choice": "pull",
+                    "description": "Will contain code for pulling irreversible block data"
+                },
+                {
+                    "choice": "push",
+                    "description": "Will contain code for pushing irreversible block data"
+                }
+            ]
+        },
+        "pullIrreversibilityStrategy": {
+            "type": "computed",
+            "value": "(irreversibilityStrategy == 'pull')"
+        },
+        "pushIrreversibilityStrategy": {
+            "type": "computed",
+            "value": "(irreversibilityStrategy == 'push')"
+        },
+        "ifdef": {
+            "type": "generated",
+            "generator": "constant",
+            "parameters": {
+                "value": "#"
+            },
+            "replaces": "//#$"
+        }
+    },
+    "SpecialCustomOperations": {
+        "*.yaml": {
+            "Operations": [
+                {
+                    "type": "conditional",
+                    "configuration": {
+                        "style": "line",
+                        "token": "#"
+                    }
+                }
+            ]
+        }
+    },
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "condition": "(irreversibilityStrategy != 'pull')",
+                    "exclude": [
+                        "src/Lykke.Bil2.Bcn.BlocksReader/Services/IrreversibleBlockProvider.cs"
+                    ]
+                },
+                {
+                    "condition": "(irreversibilityStrategy != 'push')",
+                    "exclude": [
+                        "src/Lykke.Bil2.Bcn.BlocksReader/Services/IrreversibleBlockHandler.cs"
+                    ]
+                }
+            ]
+        }
+    ]
+}

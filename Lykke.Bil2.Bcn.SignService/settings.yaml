@@ -1,0 +1,19 @@
+# Common settings
+
+MonitoringServiceClient:
+    MonitoringServiceUrl:
+        settings-key: MonitoringServiceUrl
+
+# Sign service settings
+
+EncryptionPrivateKey:
+    settings-key: Bcn-SignService-EncryptionPrivateKey
+
+# Define specific blockchain settings below, if necessary.
+#
+# For example:
+#
+# HotWalletAddress:
+#   settings-key: Bcn-HotWalletAddress
+# NetworkType:
+#   settings-key: Bcn-NetworkType

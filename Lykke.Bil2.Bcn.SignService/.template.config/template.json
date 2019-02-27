@@ -1,0 +1,35 @@
+{
+    "author": "Lykke",
+    "classifications": ["Lykke", "Bil2", "Sign Service"],
+    "name": "Lykke Bil2 Sign Service",
+    "identity": "Lykke.Bil2.SignService",
+    "shortName": "lkebil2sign",
+    "tags": {
+        "language": "C#"
+    },
+    "sourceName": "Bcn",
+    "preferNameDirectory": "false",
+    "symbols": {
+        "ifdef": {
+            "type": "generated",
+            "generator": "constant",
+            "parameters": {
+                "value": "#"
+            },
+            "replaces": "//#$"
+        }
+    },
+    "SpecialCustomOperations": {
+        "*.yaml": {
+            "Operations": [
+                {
+                    "type": "conditional",
+                    "configuration": {
+                        "style": "line",
+                        "token": "#"
+                    }
+                }
+            ]
+        }
+    }
+}
