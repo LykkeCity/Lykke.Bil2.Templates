@@ -37,7 +37,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor
                 options.IntegrationInfoServiceFactory = ctx =>
                     new IntegrationInfoService
                     (
-                        /* TODO: Provide specific settings and dependecies, if necessary */
+                        /* TODO: Provide specific settings and dependencies, if necessary */
                     );
 
                 options.TransactionEstimatorFactory = ctx =>
