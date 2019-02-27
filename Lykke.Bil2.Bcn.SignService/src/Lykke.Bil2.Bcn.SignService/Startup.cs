@@ -34,7 +34,7 @@ namespace Lykke.Bil2.Bcn.SignService
                         /* TODO: Provide specific settings and dependencies, if necessary */
                     );
 
-                // To access settigns for any purpose, (f.e. to register additional services,
+                // To access settings for any purpose, (f.e. to register additional services,
                 // taking in account that usually it shouldn't be necessary in sign service),
                 // uncomment code below:
                 //
