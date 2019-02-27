@@ -12,7 +12,7 @@ namespace Lykke.Bil2.Bcn.SignService.Services
 {
     public class AddressGenerator : IAddressGenerator
     {
-        public AddressGenerator(/* TODO: Provide specific settings and dependecies, if necessary */)
+        public AddressGenerator(/* TODO: Provide specific settings and dependencies, if necessary */)
         {
         }
 
