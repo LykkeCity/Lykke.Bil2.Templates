@@ -9,7 +9,7 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Settings
     public class AppSettings : BaseBlocksReaderSettings<DbSettings>
     {
         // Implement specific blockchain settings, if necessary.
-        // Mark sensistive data with SecureSettingsAttribute to prevent leaks.
+        // Mark sensitive data with SecureSettingsAttribute to prevent leaks.
         //
         // For example:
         //
