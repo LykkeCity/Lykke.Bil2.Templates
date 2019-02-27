@@ -25,7 +25,7 @@ namespace Lykke.Bil2.Bcn.SignService
                 options.TransactionSignerFactory = ctx =>
                     new TransactionSigner
                     (
-                        /* TODO: Provide specific settings and dependecies, if necessary */
+                        /* TODO: Provide specific settings and dependencies, if necessary */
                     );
 
                 options.AddressGeneratorFactory = ctx =>
