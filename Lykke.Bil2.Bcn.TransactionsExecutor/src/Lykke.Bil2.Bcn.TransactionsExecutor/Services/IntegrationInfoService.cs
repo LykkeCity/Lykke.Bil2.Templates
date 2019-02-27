@@ -9,7 +9,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
 {
     public class IntegrationInfoService : IIntegrationInfoService
     {
-        public IntegrationInfoService(/* TODO: Provide specific settings and dependecies, if necessary */)
+        public IntegrationInfoService(/* TODO: Provide specific settings and dependencies, if necessary */)
         {
         }
 
