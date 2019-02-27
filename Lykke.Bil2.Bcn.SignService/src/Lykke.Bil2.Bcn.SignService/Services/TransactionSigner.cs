@@ -9,7 +9,7 @@ namespace Lykke.Bil2.Bcn.SignService.Services
 {
     public class TransactionSigner : ITransactionSigner
     {
-        public TransactionSigner(/* TODO: Provide specific settings and dependecies, if necessary */)
+        public TransactionSigner(/* TODO: Provide specific settings and dependencies, if necessary */)
         {
         }
 
