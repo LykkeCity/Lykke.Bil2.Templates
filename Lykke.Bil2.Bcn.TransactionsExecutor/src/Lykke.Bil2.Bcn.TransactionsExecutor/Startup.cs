@@ -22,6 +22,14 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor
 
                 // Register required service implementations:
 
+#if formatAddress
+                options.AddressFormatsProviderFactory = ctx =>
+                    new AddressFormatsProvider
+                    (
+                        /* TODO: Provide specific settings and dependencies, if necessary */
+                    );
+#endif
+
                 options.AddressValidatorFactory = ctx =>
                     new AddressValidator
                     (
@@ -40,18 +48,45 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor
                         /* TODO: Provide specific settings and dependencies, if necessary */
                     );
 
-                options.TransactionEstimatorFactory = ctx =>
-                    new TransactionEstimator
+                options.TransactionBroadcasterFactory = ctx =>
+                    new TransactionBroadcaster
                     (
                         /* TODO: Provide specific settings and dependencies, if necessary */
                     );
 
-                options.TransactionExecutorFactory = ctx =>
-                    new TransactionExecutor
+                options.TransactionsStateProviderFactory = ctx =>
+                    new TransactionsStateProvider
                     (
                         /* TODO: Provide specific settings and dependencies, if necessary */
                     );
 
+#if transferAmountModel
+                options.TransferAmountTransactionsBuilderFactory = ctx =>
+                    new TransferAmountTransactionsBuilder
+                    (
+                        /* TODO: Provide specific settings and dependencies, if necessary */
+                    );
+
+                options.TransferAmountTransactionsEstimatorFactory = ctx =>
+                    new TransferAmountTransactionsEstimator
+                    (
+                        /* TODO: Provide specific settings and dependencies, if necessary */
+                    );
+#endif
+
+#if transferCoinsModel
+                options.TransferCoinsTransactionsBuilderFactory = ctx =>
+                    new TransferCoinsTransactionsBuilder
+                    (
+                        /* TODO: Provide specific settings and dependencies, if necessary */
+                    );
+
+                options.TransferCoinsTransactionsEstimatorFactory = ctx =>
+                    new TransferCoinsTransactionsEstimator
+                    (
+                        /* TODO: Provide specific settings and dependencies, if necessary */
+                    );
+#endif
 
                 // To access settings for any purpose,
                 // usually, to register additional services like blockchain client,

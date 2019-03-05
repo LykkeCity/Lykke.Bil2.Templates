@@ -10,6 +10,35 @@
     "sourceName": "Bcn",
     "preferNameDirectory": "false",
     "symbols": {
+        "transactionModel": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "amount",
+            "choices": [
+                {
+                    "choice": "amount",
+                    "description": "Will contain code for building 'transfer amount' transactions."
+                },
+                {
+                    "choice": "coins",
+                    "description": "Will contain code for building 'transfer coins' transactions."
+                }
+            ]
+        },
+        "transferAmountModel": {
+            "type": "computed",
+            "value": "(transactionModel == 'amount')"
+        },
+        "transferCoinsModel": {
+            "type": "computed",
+            "value": "(transactionModel == 'coins')"
+        },
+        "formatAddress":{
+            "type": "parameter",
+            "dataType":"bool",
+            "defaultValue": "false",
+            "description": "Will contain code for address formatting."
+        },
         "ifdef": {
             "type": "generated",
             "generator": "constant",
@@ -31,5 +60,31 @@
                 }
             ]
         }
-    }
+    },
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "condition": "(transactionModel != 'amount')",
+                    "exclude": [
+                        "src/Lykke.Bil2.Bcn.Transactionsexecutor/Services/TransferAmountTransactionsBuilder.cs",
+                        "src/Lykke.Bil2.Bcn.Transactionsexecutor/Services/TransferAmountTransactionsEstimator.cs"
+                    ]
+                },
+                {
+                    "condition": "(transactionModel != 'coins')",
+                    "exclude": [
+                        "src/Lykke.Bil2.Bcn.Transactionsexecutor/Services/TransferCoinsTransactionsBuilder.cs",
+                        "src/Lykke.Bil2.Bcn.Transactionsexecutor/Services/TransferCoinsTransactionsEstimator.cs"
+                    ]
+                },
+                {
+                    "condition": "(!formatAddress)",
+                    "exclude": [
+                        "src/Lykke.Bil2.Bcn.Transactionsexecutor/Services/AddressFormatsProvider.cs"
+                    ]
+                }
+            ]
+        }
+    ]
 }
