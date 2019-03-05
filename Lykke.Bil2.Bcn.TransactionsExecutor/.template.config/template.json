@@ -67,21 +67,21 @@
                 {
                     "condition": "(transactionModel != 'amount')",
                     "exclude": [
-                        "src/Lykke.Bil2.Bcn.Transactionsexecutor/Services/TransferAmountTransactionsBuilder.cs",
-                        "src/Lykke.Bil2.Bcn.Transactionsexecutor/Services/TransferAmountTransactionsEstimator.cs"
+                        "src/Lykke.Bil2.Bcn.TransactionsExecutor/Services/TransferAmountTransactionsBuilder.cs",
+                        "src/Lykke.Bil2.Bcn.TransactionsExecutor/Services/TransferAmountTransactionsEstimator.cs"
                     ]
                 },
                 {
                     "condition": "(transactionModel != 'coins')",
                     "exclude": [
-                        "src/Lykke.Bil2.Bcn.Transactionsexecutor/Services/TransferCoinsTransactionsBuilder.cs",
-                        "src/Lykke.Bil2.Bcn.Transactionsexecutor/Services/TransferCoinsTransactionsEstimator.cs"
+                        "src/Lykke.Bil2.Bcn.TransactionsExecutor/Services/TransferCoinsTransactionsBuilder.cs",
+                        "src/Lykke.Bil2.Bcn.TransactionsExecutor/Services/TransferCoinsTransactionsEstimator.cs"
                     ]
                 },
                 {
                     "condition": "(!formatAddress)",
                     "exclude": [
-                        "src/Lykke.Bil2.Bcn.Transactionsexecutor/Services/AddressFormatsProvider.cs"
+                        "src/Lykke.Bil2.Bcn.TransactionsExecutor/Services/AddressFormatsProvider.cs"
                     ]
                 }
             ]

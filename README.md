@@ -57,8 +57,13 @@ For sign service implementation details see [Lykke.Bil2.Bcn.SignService/IMPLEMEN
 
 ### Transactions executor
 
+Transactions executor template contains additional parameters:
+
+- `-tm` (or `--transactionModel`) for choosing between `transfer amount` and `transfer coins` transaction model, one of `amount|coins`, if not specified - `amount` is used;
+- `-fa` (or `--fromatAddress`) for adding code for address formatting, used if the blockchain supports multiple address formats, `false` by default;
+
 ```bash
-dotnet new lkebil2tx -n Bitcoin -o Lykke.Bil2.Bitcoin.TransactionsExecutor
+dotnet new lkebil2tx -n Bitcoin -o Lykke.Bil2.Bitcoin.TransactionsExecutor [-tm amount|coins] [-fa]
 ```
 For transactions executor implementation details see [Lykke.Bil2.Bcn.TransactionsExecutor/IMPLEMENTATION.md](Lykke.Bil2.Bcn.TransactionsExecutor/IMPLEMENTATION.md).
 
@@ -67,7 +72,7 @@ For transactions executor implementation details see [Lykke.Bil2.Bcn.Transaction
 Blocks reader template contains additional parameter `-is` (or `--irreversibilityStrategy`) for irreversible block obtaining strategy, one of `none|pull|push`, if not specified - `none` is used:
 
 ```bash
-dotnet new lkebil2blocks -n Bitcoin -o Lykke.Bil2.Bitcoin.BlocksReader -is none|pull|push
+dotnet new lkebil2blocks -n Bitcoin -o Lykke.Bil2.Bitcoin.BlocksReader [-is none|pull|push]
 ```
 
 Use `none` or skip `-is` parameter if blockchain does not support irreversible blocks.
