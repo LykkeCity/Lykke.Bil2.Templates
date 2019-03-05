@@ -19,7 +19,10 @@ namespace Lykke.Bil2.Bcn.SignService.Services
         public async Task<AddressCreationResult> CreateAddressAsync()
         {
             // Create dedicated deposit wallet, or return shared deposit wallet address.
-            // Throw OperationNotSupportedException if offline address creation is not supported by the blockchain.
+            //
+            // Throw
+            // - Lykke.Bil2.Sdk.Exceptions.OperationNotSupportedException:
+            //     if offline address creation is not supported by the blockchain.
             //
             // For example when shared deposit wallet scheme is used:
             //
@@ -31,16 +34,15 @@ namespace Lykke.Bil2.Bcn.SignService.Services
 
         public async Task<CreateAddressTagResponse> CreateAddressTagAsync(string address, CreateAddressTagRequest request)
         {
-            // Create tag (new GUID, usually) for deposit wallet,
-            // if shared deposit wallet scheme is used.
+            // Create tag (new GUID, usually) for deposit wallet, if shared deposit wallet scheme is used.
+            //
+            // Throw
+            // - Lykke.Bil2.Sdk.Exceptions.OperationNotSupportedException:
+            //     if address tag creation is not supported by the blockchain.
             //
             // For example:
             //
             // return new CreateAddressTagResponse(Guid.NewGuid().ToString("N"));
-            //
-            // Or throw exception indicating operation not supported:
-            //
-            // throw new OperationNotSupportedException();
 
 
             throw new System.NotImplementedException();
