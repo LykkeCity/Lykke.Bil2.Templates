@@ -1,4 +1,5 @@
-using System.Transactions;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Lykke.Bil2.Contract.BlocksReader.Events;
 using Lykke.Bil2.Sdk.BlocksReader.Services;
@@ -36,9 +37,12 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Services
 
             //     if (tx.State == "SUCCESS")
             //     {
+            //
+            //         // If blockchain uses amount transfer scheme (is JSON-based) then emit TransferAmountTransactionExecutedEvent
+            //
             //         listener.HandleExecutedTransactionAsync(
             //             tx.Raw.ToBase58(),
-            //             new TransactionExecutedEvent(
+            //             new TransferAmountTransactionExecutedEvent(
             //                 block.Hash,
             //                 i,
             //                 tx.Hash,
@@ -47,21 +51,38 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Services
             //                     yield return new BalanceChange("0", act.ActionId, act.Token.Id, CoinsChange.FromDecimal((-1) * act.Amount, act.Token.Accuracy), act.From);
             //                     yield return new BalanceChange("1", act.ActionId, act.Token.Id, CoinsChange.FromDecimal(act.Amount, act.Token.Accuracy), act.To);
             //                 }),
+            //                 fee: null,
             //                 isIrreversible: true
             //             )
             //         );
+            //
+            //         // If blockchain uses coins transfer scheme (is UTXO-based) then emit TransferCoinsTransactionExecutedEvent
+            //
+            //         listener.HandleExecutedTransactionAsync(
+            //             tx.Raw.ToBase58(),
+            //             new TransferCoinsTransactionExecutedEvent(
+            //                 block.Hash,
+            //                 i,
+            //                 tx.Hash,
+            //                 tx.Outputs.Select(vout => new ReceivedCoin(vout.Number, "BTC", CoinsAmount.FromDecimal(vout.Amount, 8), vout.Address)),
+            //                 tx.Inputs.Select(vin => new CoinReference(vin.Hash, vin.Number)),
+            //                 new Dictionary<AssetId, CoinsAmount> { { "BTC", CoinsAmount.FromDecimal(tx.Fee) } },
+            //                 isIrreversible: null
+            //             )
+            //         );
             //     }
-
+            //
             //     if (tx.State == "FAILURE")
             //     {
             //         listener.HandleFailedTransactionAsync(
             //             tx.Raw.ToBase58(),
             //             new TransactionFailedEvent(
-            //                  block.Hash,
+            //                 block.Hash,
             //                 i,
             //                 tx.Hash,
             //                 TransactionBroadcastingError.RebuildRequired,
-            //                 tx.Error
+            //                 tx.Error,
+            //                 fee: null
             //             )
             //         );
             //     }

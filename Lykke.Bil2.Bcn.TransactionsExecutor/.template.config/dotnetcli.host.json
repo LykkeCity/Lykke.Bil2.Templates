@@ -1,0 +1,12 @@
+{
+    "symbolInfo": {
+        "transactionModel": {
+            "longName": "transactionModel",
+            "shortName": "tm"
+        },
+        "formatAddress": {
+            "longName": "formatAddress",
+            "shortName": "fa"
+        }
+    }
+}
