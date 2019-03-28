@@ -35,6 +35,6 @@ Db:
 # NodeUrl:
 #   settings-key: Bcn-NodeUrl
 # NodeUsername:
-#   settings-key: Bcn-Nodeassword
+#   settings-key: Bcn-NodeUsername
 # NodePassword:
 #   settings-key: Bcn-NodePassword
