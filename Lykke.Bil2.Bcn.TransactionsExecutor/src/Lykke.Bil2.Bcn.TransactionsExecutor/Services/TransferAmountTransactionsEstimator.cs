@@ -34,11 +34,11 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
             //
             // var fee = ...;
             //
-            // return new EstimateSendingTransactionResponse
+            // return new EstimateTransactionResponse
             // (
-            //     new Dictionary<AssetId, CoinsAmount>
+            //     new []
             //     {
-            //         { "BTC", CoinsAmount.FromDecimal(fee, accuracy: 8) }
+            //         new Fee { new Asset("BTC"), UMoney.Create(fee, 8) }
             //     }
             // );
 

@@ -30,11 +30,17 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Services
             //     block.Transactions.Count,
             //     block.Previous.Hash
             // ));
-
+            //
+            // await listener.HandleRawBlockAsync
+            // (
+            //     block.Raw.ToBase58(),
+            //     block.Hash
+            // );
+            //
             // for (int i = 0; i < block.Transactions.Length; i++)
             // {
             //     var tx = block.Transactions[i];
-
+            //
             //     if (tx.State == "SUCCESS")
             //     {
             //
@@ -46,10 +52,10 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Services
             //                 block.Hash,
             //                 i,
             //                 tx.Hash,
-            //                 tx.Actions.SelectMany(act =>
+            //                 tx.Actions.SelectMany(act => new []
             //                 {
-            //                     yield return new BalanceChange("0", act.ActionId, act.Token.Id, CoinsChange.FromDecimal((-1) * act.Amount, act.Token.Accuracy), act.From);
-            //                     yield return new BalanceChange("1", act.ActionId, act.Token.Id, CoinsChange.FromDecimal(act.Amount, act.Token.Accuracy), act.To);
+            //                     new BalanceChange(act.ActionId, new Asset(act.Token.Id), Money.Negate(Money.Create(act.Amount, act.Token.Accuracy)), act.From);
+            //                     new BalanceChange(act.ActionId, new Asset(act.Token.Id), Money.Create(act.Amount, act.Token.Accuracy), act.To);
             //                 }),
             //                 fee: null,
             //                 isIrreversible: true
@@ -64,9 +70,9 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Services
             //                 block.Hash,
             //                 i,
             //                 tx.Hash,
-            //                 tx.Outputs.Select(vout => new ReceivedCoin(vout.Number, "BTC", CoinsAmount.FromDecimal(vout.Amount, 8), vout.Address)),
+            //                 tx.Outputs.Select(vout => new ReceivedCoin(vout.Number, "BTC", Money.Create(vout.Amount, 8), vout.Address)),
             //                 tx.Inputs.Select(vin => new CoinReference(vin.Hash, vin.Number)),
-            //                 new Dictionary<AssetId, CoinsAmount> { { "BTC", CoinsAmount.FromDecimal(tx.Fee) } },
+            //                 new [] { new Fee(new Asset("BTC"), Money.Create(tx.Fee, 8)) },
             //                 isIrreversible: null
             //             )
             //         );

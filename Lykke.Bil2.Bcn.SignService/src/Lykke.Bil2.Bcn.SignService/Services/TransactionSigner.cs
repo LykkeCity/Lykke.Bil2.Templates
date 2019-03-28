@@ -15,6 +15,29 @@ namespace Lykke.Bil2.Bcn.SignService.Services
 
         public async Task<SignTransactionResponse> SignAsync(IReadOnlyCollection<string> privateKeys, Base58String requestTransactionContext)
         {
+            // TODO: sign transaction and return its body and hash
+            //
+            // For example:
+            //
+            // SignedTx signedTx;
+            //
+            // try
+            // {
+            //     signedTx = TxSigner.Sign(requestTransactionContext.DecodeToString(), privateKeys);
+            // }
+            // catch (FormatException ex)
+            // {
+            //     throw new RequestValidationException("Invalid transaction context, must be valid Bcn transaction",
+            //         ex, nameof(requestTransactionContext));
+            // }
+            //
+            // return Task.FromResult(new SignTransactionResponse
+            // (
+            //     signedTx.Raw.ToBase58(),
+            //     signedTx.Hash
+            // ));
+
+            
             throw new System.NotImplementedException();
         }
     }
