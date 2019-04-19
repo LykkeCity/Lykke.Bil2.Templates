@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
-using Lykke.Bil2.Contract.TransactionsExecutor;
 using Lykke.Bil2.Sdk.TransactionsExecutor.Services;
+using Lykke.Bil2.SharedDomain;
 
 namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
 {
@@ -35,7 +35,6 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
             // {
             //     return TransactionState.Mined;
             // }
-
 
             throw new System.NotImplementedException();
         }
