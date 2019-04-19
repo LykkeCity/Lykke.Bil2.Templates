@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Lykke.Bil2.Contract.Common;
 using Lykke.Bil2.Contract.SignService.Responses;
 using Lykke.Bil2.Sdk.SignService.Services;
+using Lykke.Bil2.SharedDomain;
 
 namespace Lykke.Bil2.Bcn.SignService.Services
 {
