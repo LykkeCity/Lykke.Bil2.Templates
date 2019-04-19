@@ -1,4 +1,4 @@
-using Lykke.Bil2.Sdk.SignService;
+using JetBrains.Annotations;
 using Lykke.Bil2.Sdk.SignService.Settings;
 
 namespace Lykke.Bil2.Bcn.SignService.Settings
@@ -6,6 +6,7 @@ namespace Lykke.Bil2.Bcn.SignService.Settings
     /// <summary>
     /// Specific blockchain settings
     /// </summary>
+    [UsedImplicitly]
     public class AppSettings : BaseSignServiceSettings
     {
         // Implement specific blockchain settings, if necessary
