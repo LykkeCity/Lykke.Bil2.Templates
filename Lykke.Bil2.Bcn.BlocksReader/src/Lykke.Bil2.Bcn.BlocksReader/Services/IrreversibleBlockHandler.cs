@@ -19,8 +19,10 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Services
 
         public async Task OnIrreversibleBlockChangedAsync(long blockNumber, string blockHash)
         {
-            await _listener.HandleNewLastIrreversableBlockAsync(
-                new LastIrreversibleBlockUpdatedEvent(
+            await _listener.HandleNewLastIrreversibleBlockAsync
+            (
+                new LastIrreversibleBlockUpdatedEvent
+                (
                     blockNumber,
                     blockHash
                 )

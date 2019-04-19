@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Lykke.Bil2.Contract.BlocksReader.Events;
 using Lykke.Bil2.Sdk.BlocksReader.Services;
 using Lykke.Bil2.Contract.Common;
-using Lykke.Bil2.Contract.TransactionsExecutor;
 
 namespace Lykke.Bil2.Bcn.BlocksReader.Services
 {
@@ -18,25 +17,16 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Services
         {
             // TODO: Process block with specified number, emit header and transaction(s) events
             //
-            // For example
+            // For example:
             //
             // var block = ...;
             //
-            // listener.HandleHeaderAsync(new BlockHeaderReadEvent(
-            //     block.Number,
-            //     block.Hash,
-            //     block.Time,
-            //     block.Raw.Length,
-            //     block.Transactions.Count,
-            //     block.Previous.Hash
-            // ));
-            //
-            // await listener.HandleRawBlockAsync
+            // var handleRawBlockTask = listener.HandleRawBlockAsync
             // (
             //     block.Raw.ToBase58(),
             //     block.Hash
             // );
-            //
+            
             // for (int i = 0; i < block.Transactions.Length; i++)
             // {
             //     var tx = block.Transactions[i];
@@ -46,7 +36,7 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Services
             //
             //         // If blockchain uses amount transfer scheme (is JSON-based) then emit TransferAmountTransactionExecutedEvent
             //
-            //         listener.HandleExecutedTransactionAsync(
+            //         await listener.HandleExecutedTransactionAsync(
             //             tx.Raw.ToBase58(),
             //             new TransferAmountTransactionExecutedEvent(
             //                 block.Hash,
@@ -64,7 +54,7 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Services
             //
             //         // If blockchain uses coins transfer scheme (is UTXO-based) then emit TransferCoinsTransactionExecutedEvent
             //
-            //         listener.HandleExecutedTransactionAsync(
+            //         await listener.HandleExecutedTransactionAsync(
             //             tx.Raw.ToBase58(),
             //             new TransferCoinsTransactionExecutedEvent(
             //                 block.Hash,
@@ -80,7 +70,7 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Services
             //
             //     if (tx.State == "FAILURE")
             //     {
-            //         listener.HandleFailedTransactionAsync(
+            //         await listener.HandleFailedTransactionAsync(
             //             tx.Raw.ToBase58(),
             //             new TransactionFailedEvent(
             //                 block.Hash,
@@ -93,6 +83,19 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Services
             //         );
             //     }
             // }
+            
+            // Better to send block header in the end:
+            //
+            // await listener.HandleHeaderAsync(new BlockHeaderReadEvent(
+            //     block.Number,
+            //     block.Hash,
+            //     block.Time,
+            //     block.Raw.Length,
+            //     block.Transactions.Count,
+            //     block.Previous.Hash
+            // ));
+            //
+            // await handleRawBlockTask;
 
 
             throw new System.NotImplementedException();

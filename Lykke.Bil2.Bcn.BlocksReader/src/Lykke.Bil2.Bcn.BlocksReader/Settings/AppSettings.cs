@@ -1,4 +1,4 @@
-using Lykke.Bil2.Sdk.BlocksReader;
+using JetBrains.Annotations;
 using Lykke.Bil2.Sdk.BlocksReader.Settings;
 
 namespace Lykke.Bil2.Bcn.BlocksReader.Settings
@@ -6,10 +6,11 @@ namespace Lykke.Bil2.Bcn.BlocksReader.Settings
     /// <summary>
     /// Specific blockchain settings
     /// </summary>
-    public class AppSettings : BaseBlocksReaderSettings<DbSettings>
+    [UsedImplicitly]
+    public class AppSettings : BaseBlocksReaderSettings<DbSettings, RabbitMqSettings>
     {
         // Implement specific blockchain settings, if necessary.
-        // Mark sensitive data with SecureSettingsAttribute to prevent leaks.
+        // Mark sensitive data with SecureSettingsAttribute to prevent sensitive data leaks.
         //
         // For example:
         //
