@@ -7,6 +7,7 @@ using Lykke.Bil2.Sdk.BlocksReader;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Lykke.Bil2.Sdk.BlocksReader.Services;
+using Lykke.Common;
 
 namespace Lykke.Bil2.Bcn.BlocksReader
 {
@@ -21,6 +22,10 @@ namespace Lykke.Bil2.Bcn.BlocksReader
             return services.BuildBlockchainBlocksReaderServiceProvider<AppSettings>(options =>
             {
                 options.IntegrationName = IntegrationName;
+
+//#$if DEBUG
+                options.RabbitVhost = AppEnvironment.EnvInfo;
+//#$endif
 
                 // Register required service implementations:
 
