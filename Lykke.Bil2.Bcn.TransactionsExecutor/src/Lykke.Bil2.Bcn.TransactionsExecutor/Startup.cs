@@ -42,8 +42,14 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor
                         /* TODO: Provide specific settings and dependencies, if necessary */
                     );
 
-                options.IntegrationInfoServiceFactory = ctx =>
-                    new IntegrationInfoService
+                options.DependenciesInfoProviderFactory = ctx =>
+                    new DependencyInfoProvider
+                    (
+                        /* TODO: Provide specific settings and dependencies, if necessary */
+                    );
+
+                options.BlockchainInfoProviderFactory = ctx =>
+                    new BlockchainInfoProvider
                     (
                         /* TODO: Provide specific settings and dependencies, if necessary */
                     );

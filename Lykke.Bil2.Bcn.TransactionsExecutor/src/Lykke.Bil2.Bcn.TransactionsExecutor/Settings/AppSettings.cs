@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Lykke.Bil2.Sdk.TransactionsExecutor.Settings;
 
 namespace Lykke.Bil2.Bcn.TransactionsExecutor.Settings
@@ -5,6 +6,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Settings
     /// <summary>
     /// Specific blockchain settings
     /// </summary>
+    [UsedImplicitly]
     public class AppSettings : BaseTransactionsExecutorSettings<DbSettings>
     {
         // Implement specific blockchain settings, if necessary.
