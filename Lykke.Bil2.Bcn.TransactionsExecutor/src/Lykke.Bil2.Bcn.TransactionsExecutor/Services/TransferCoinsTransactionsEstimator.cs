@@ -16,7 +16,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
             // TODO: estimate transaction fees.
             //
             // Throw:
-            // - Lykke.Bil2.Contract.Common.RequestValidationException:
+            // - Lykke.Bil2.Contract.Common.Exceptions.RequestValidationException:
             //     if a transaction can’t be estimated with the given parameters
             //     and it will be never possible to estimate the transaction with exactly the same
             //     parameters.

@@ -15,7 +15,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
             // TODO: broadcast transaction
             //
             // Throw:
-            // - Lykke.Bil2.Contract.Common.RequestValidationException:
+            // - Lykke.Bil2.Contract.Common.Exceptions.RequestValidationException:
             //     if a transaction can’t be broadcasted with the given parameters.
             //     It should be guaranteed that the transaction is not included and will not be
             //     included to the any blockchain block.

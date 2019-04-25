@@ -16,7 +16,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
             // TODO: prepare data required for signing, return as base58 encoded string
             //
             // Throw:
-            // - Lykke.Bil2.Contract.Common.RequestValidationException:
+            // - Lykke.Bil2.Contract.Common.Exceptions.RequestValidationException:
             //     if a transaction can’t be built with the given parameters and
             //     it will be never possible to build the transaction with exactly the same parameters.
             //
