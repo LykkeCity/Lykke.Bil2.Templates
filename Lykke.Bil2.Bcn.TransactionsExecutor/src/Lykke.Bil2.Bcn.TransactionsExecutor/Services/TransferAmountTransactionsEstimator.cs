@@ -17,7 +17,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
             // TODO: estimate transaction fees.
             //
             // Throw:
-            // - Lykke.Bil2.Contract.Common.RequestValidationException:
+            // - Lykke.Bil2.Contract.Common.Exceptions.RequestValidationException:
             //     if a transaction can’t be estimated with the given parameters
             //     and it will be never possible to estimate the transaction with exactly the same
             //     parameters.
@@ -41,7 +41,25 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
             //         new Fee { new Asset("BTC"), UMoney.Create(fee, 8) }
             //     }
             // );
-
+            // 
+            // If you can map error to the TransactionEstimationError, return EstimateTransactionResponse
+            // with an error specified. Return calculated fee as well, if it's possible for particular error.
+            // 
+            // For example:
+            // 
+            // return new EstimateTransactionResponse
+            // (
+            //     new []
+            //     {
+            //         new Fee { new Asset("BTC"), UMoney.Create(fee, 8) }
+            //     },
+            //     new TransactionEstimationFailure
+            //     (
+            //         TransactionEstimationError.NotEnoughBalance,
+            //         $"There is not enough balance on address {address}"
+            //     )
+            // );
+            //
 
             throw new System.NotImplementedException();
         }

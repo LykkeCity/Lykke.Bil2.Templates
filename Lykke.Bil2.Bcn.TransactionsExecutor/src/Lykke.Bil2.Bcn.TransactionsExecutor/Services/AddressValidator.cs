@@ -21,7 +21,7 @@ namespace Lykke.Bil2.Bcn.TransactionsExecutor.Services
             // TODO: validate address and, optionally, tag type and tag
             //
             // Throw
-            // - Lykke.Bil2.Contract.Common.RequestValidationException:
+            // - Lykke.Bil2.Contract.Common.Exceptions.RequestValidationException:
             //     if input parameters are invalid and result can't be mapped to
             //     any of Lykke.Bil2.Contract.TransactionsExecutor.AddressValidationResult value.
             //
